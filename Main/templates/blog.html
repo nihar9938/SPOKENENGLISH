@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+  
+{% block content %}
+ <!-- Page breadcrumb -->
+ {% load static %}
+ <section id="mu-page-breadcrumb">
+   <div class="container">
+     <div class="row">
+       <div class="col-md-12">
+         <div class="mu-page-breadcrumb-area">
+           <h2>Blog</h2>
+            <ol class="breadcrumb">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li class="active">Blog</li>
+          </ol>
+         </div>
+       </div>
+     </div>
+   </div>
+ </section>
+ <!-- End breadcrumb -->
+ <section id="mu-course-content">
+   <div class="container">
+     <div class="row">
+       <div class="col-md-12">
+         <div class="mu-course-content-area">
+            <div class="row">
+              <div class="col-md-12">
+                
+                
+                <!-- start course content container -->
+                <div class="mu-course-container mu-blog-single">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <article class="mu-blog-single-item">
+                        <figure class="mu-blog-single-img">
+                          <a href="#"><img alt="img" src="{% static 'assets/img/blog/blog-3.jpg' %}"></a>
+                          <figcaption class="mu-blog-caption">
+                            <h3><a href="#">Why is English an important language?</a></h3>
+                          </figcaption>                      
+                        </figure>
+                        <div class="mu-blog-meta">
+                          <a href="#">By Admin</a>
+                          <a href="#">October 2020</a>
+                        </div>
+                        <div class="mu-blog-description">
+                          <p>English is the most used and spoken language around the world. At least one out of 5 people can speak or understand English!</p>
+                          <p>English is the official language of 57 countries around the world. You can instantly increase your ability to communicate with people from different countries and continents.</p>
+                          <blockquote>
+                            <p>It’s fun! Learning English will help you understand different cultures, communicate with people from all over the world, and observe habits that are different from yours.</p>                            
+                          </blockquote>
+                          
+                          <p>English helps you increase your educational opportunities. When you learn English, you can attend international schools around the world and become better educated. You gain access to numerous English resources and increase your knowledge instead of getting lost in translation.</p>
+                          <p>Learning English is easier than learning some other languages like German, Chinese or Arabic. . Considering that is the most spoken language, the resources that someone can access in order to learn are multiple across the Internet. Nowadays there are so many options, from personalised online tutoring to digital applications like KnowbleReader that will help you learn and improve your English.</p>
+                          <h2>We know it’s hard, but stay motivated!</h2>
+                          <p>Don’t forget that you can personalise your learning process to your needs, goals and level, making the experience more engaging and exciting. Finding something that inspires you, might boost even more your will to learn. What is that really excites you of the English language? Why do you want to learn English? Do you have a specific goal to achieve (instrumental motivation) or is it the whole journey and process that excites you, and the understanding of a new culture (integrative motivation)?</p>
+                          <p>Technology now allows everyone to study and learn on their own pace, from the comfort of their home and during their free time.</p>
+                          <p>At first, learning English might seem boring and time-consuming. However, you should focus on the benefits that English has to offer and the outcomes of the whole learning experience.</p>
+                          <h4>How to improve your spoken English: 8 tips</h4>
+                          <ul>
+                            <li>Speak, speak, speak</li>
+                            <li>Reflect on your conversations</li>
+                            <li>Listen and read</li>
+                            <li>Prepare cheat sheets</li>
+                            <li>Pick up the phone</li>
+                            <li>Record your voice</li>
+                            <li>Learn phrases rather than single words</li>
+                            <li>Have fun</li>
+                          </ul>
+                          
+                        </div>
+                        <!-- start blog social share -->
+                        <div class="mu-blog-social">
+                          <ul class="mu-news-social-nav">
+                            <li>SOCIAL SHARE :</li>
+                            <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                            <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                            <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
+                            <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                          </ul>
+                        </div>
+                        <!-- End blog social share -->
+                      </article>
+                    </div>                                   
+                  </div>
+                </div>
+                <!-- end course content container -->
+                <!-- end blog navigation -->
+                <!-- start related course item -->
+                
+                <!-- end start related course item -->
+                
+                
+              </div>
+              
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </section>
+
+ {% endblock %}

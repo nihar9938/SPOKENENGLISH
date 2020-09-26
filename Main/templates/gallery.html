@@ -1,0 +1,183 @@
+{% extends 'base.html' %}
+  
+{% block content %}
+ <!-- Page breadcrumb -->
+ {% load static %}
+ <section id="mu-page-breadcrumb">
+   <div class="container">
+     <div class="row">
+       <div class="col-md-12">
+         <div class="mu-page-breadcrumb-area">
+           <h2>Gallery</h2>
+           <ol class="breadcrumb">
+            <li><a href="{% url 'home' %}">Home</a></li>            
+            <li class="active">Gallery</li>
+          </ol>
+         </div>
+       </div>
+     </div>
+   </div>
+ </section>
+ <!-- End breadcrumb -->
+ <!-- Start gallery  -->
+ <section id="mu-gallery">
+   <div class="container">
+     <div class="row">
+       <div class="col-md-12">
+         <div class="mu-gallery-area">
+          <!-- start gallery content -->
+          <div class="mu-gallery-content">
+            <div class="mu-gallery-body">
+              <ul id="mixit-container" class="row">
+                <!-- start single gallery image -->
+                <li class="col-md-4 col-sm-6 col-xs-12 mix lab">
+                  <div class="mu-single-gallery">                  
+                    <div class="mu-single-gallery-item">
+                      <div class="mu-single-gallery-img">
+                        <a href="#"><img alt="img" src="{% static 'assets/img/gallery/small/g1.jpg' %}"></a>
+                      </div>
+                      <div class="mu-single-gallery-info">
+                        <div class="mu-single-gallery-info-inner">
+                          <a href="{% static 'assets/img/gallery/big/g1.jpg' %}" data-fancybox-group="gallery" class="fancybox"><span class="fa fa-eye"></span></a>
+                        </div>
+                      </div>                  
+                    </div>
+                  </div>
+                </li>
+                <!-- start single gallery image -->
+               <li class="col-md-4 col-sm-6 col-xs-12 mix library">
+                  <div class="mu-single-gallery">                  
+                    <div class="mu-single-gallery-item">
+                      <div class="mu-single-gallery-img">
+                        <a href="#"><img alt="img" src="{% static 'assets/img/gallery/small/g2.jpg' %}"></a>
+                      </div>
+                       <div class="mu-single-gallery-info">
+                        <div class="mu-single-gallery-info-inner">
+                          <a href="{% static 'assets/img/gallery/big/g2.jpg' %}" data-fancybox-group="gallery" class="fancybox">
+                            <span class="fa fa-eye"></span>
+                          </a>
+                        </div>
+                      </div> 
+                    </div>
+                  </div>
+               </li>
+                <!-- start single gallery image -->
+                <li class="col-md-4 col-sm-6 col-xs-12 mix lab">
+                  <div class="mu-single-gallery">                  
+                    <div class="mu-single-gallery-item">
+                      <div class="mu-single-gallery-img">
+                        <a href="#"><img alt="img" src="{% static 'assets/img/gallery/small/g3.jpg' %}"></a>
+                      </div>
+                      <div class="mu-single-gallery-info">
+                        <div class="mu-single-gallery-info-inner">
+                          <a href="{% static 'assets/img/gallery/big/g3.jpg' %}" data-fancybox-group="gallery" class="fancybox">
+                            <span class="fa fa-eye"></span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <!-- start single gallery image -->
+                <li class="col-md-4 col-sm-6 col-xs-12 mix classroom">
+                  <div class="mu-single-gallery">                  
+                    <div class="mu-single-gallery-item">
+                      <div class="mu-single-gallery-img">
+                        <a href="#"><img alt="img" src="{% static 'assets/img/gallery/small/g4.jpg' %}"></a>
+                      </div>
+                       <div class="mu-single-gallery-info">
+                        <div class="mu-single-gallery-info-inner">
+                          <a href="{% static 'assets/img/gallery/big/g4.jpg' %}" data-fancybox-group="gallery" class="fancybox"><span class="fa fa-eye"></span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <!-- start single gallery image -->
+                <li class="col-md-4 col-sm-6 col-xs-12 mix others">
+                  <div class="mu-single-gallery">                  
+                    <div class="mu-single-gallery-item">
+                      <div class="mu-single-gallery-img">
+                        <a href="#"><img alt="img" src="{% static 'assets/img/gallery/small/g5.jpg' %}"></a>
+                      </div>
+                      <div class="mu-single-gallery-info">
+                        <div class="mu-single-gallery-info-inner">
+                          <a href="{% static 'assets/img/gallery/big/g5.jpg' %}" data-fancybox-group="gallery" class="fancybox"><span class="fa fa-eye"></span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <!-- start single gallery image -->
+                <li class="col-md-4 col-sm-6 col-xs-12 mix cafe">
+                  <div class="mu-single-gallery">                  
+                    <div class="mu-single-gallery-item">
+                      <div class="mu-single-gallery-img">
+                        <a href="#"><img alt="img" src="{% static 'assets/img/gallery/small/g6.jpg' %}"></a>
+                      </div>
+                       <div class="mu-single-gallery-info">
+                        <div class="mu-single-gallery-info-inner">
+                          <a href="{% static 'assets/img/gallery/big/g6.jpg' %}" data-fancybox-group="gallery" class="fancybox"><span class="fa fa-eye"></span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <!-- start single gallery image -->
+                <li class="col-md-4 col-sm-6 col-xs-12 mix others">
+                  <div class="mu-single-gallery">                  
+                    <div class="mu-single-gallery-item">
+                      <div class="mu-single-gallery-img">
+                        <a href="#"><img alt="img" src="{% static 'assets/img/gallery/small/g7.jpg' %}"></a>
+                      </div>
+                      <div class="mu-single-gallery-info">
+                        <div class="mu-single-gallery-info-inner">
+                          <a href="{% static 'assets/img/gallery/big/g7.jpg' %}" data-fancybox-group="gallery" class="fancybox"><span class="fa fa-eye"></span></a>
+                        </div>
+                      </div>             
+                    </div>
+                  </div> 
+                </li>
+                 <!-- start single gallery image -->
+                <li class="col-md-4 col-sm-6 col-xs-12 mix library">
+                  <div class="mu-single-gallery">                  
+                    <div class="mu-single-gallery-item">
+                      <div class="mu-single-gallery-img">
+                        <a href="#"><img alt="img" src="{% static 'assets/img/gallery/small/g8.jpg' %}"></a>
+                      </div>
+                       <div class="mu-single-gallery-info">
+                        <div class="mu-single-gallery-info-inner">
+                          <a href="{% static 'assets/img/gallery/big/g8.jpg' %}" data-fancybox-group="gallery" class="fancybox"><span class="fa fa-eye"></span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <!-- start single gallery image -->
+                <li class="col-md-4 col-sm-6 col-xs-12 mix lab">
+                  <div class="mu-single-gallery">                  
+                    <div class="mu-single-gallery-item">
+                      <div class="mu-single-gallery-img">
+                        <a href="#"><img alt="img" src="{% static 'assets/img/gallery/small/g9.jpg' %}"></a>
+                      </div>
+                      <div class="mu-single-gallery-info">
+                        <div class="mu-single-gallery-info-inner">
+                          <a href="{% static 'assets/img/gallery/big/g9.jpg' %}" data-fancybox-group="gallery" class="fancybox"><span class="fa fa-eye"></span></a>
+                        </div>
+                      </div>             
+                    </div>
+                  </div> 
+                </li>
+              </ul>            
+            </div>
+          </div>
+          <!-- end gallery content -->
+         </div>
+       </div>
+     </div>
+   </div>
+ </section>
+ <!-- End gallery  -->
+ {% endblock %}
+
+ 

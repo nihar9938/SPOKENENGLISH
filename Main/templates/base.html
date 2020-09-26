@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'assets/img/favicon.ico' %}" type="image/x-icon">
+
+    <!-- Font awesome -->
+    <link href="{% static 'assets/css/font-awesome.css' %}" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet">   
+    <!-- Slick slider -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/slick.css' %}">          
+    <!-- Fancybox slider -->
+    <link rel="stylesheet" href="{% static 'assets/css/jquery.fancybox.css' %}" type="text/css" media="screen" /> 
+    <!-- Theme color -->
+    <link id="switcher" href="{% static 'assets/css/theme-color/default-theme.css' %}" rel="stylesheet">          
+
+    <!-- Main style sheet -->
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">    
+
+   
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,300,300italic,500,700' rel='stylesheet' type='text/css'>
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+	<style style="text/css">
+.scroll-up {
+ height: 250px;
+ overflow: hidden;
+ position: relative;
+ background: linear-gradient(to right, #ff99ff 0%, #6699ff 100%);
+ color: White;
+ border: 3px solid #191970;
+}
+.scroll-up ul {
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ margin: 0;
+ line-height: 50px;
+<!-- text-align: center;-->
+ /* Starting position */
+ -moz-transform:translateY(100%);
+ -webkit-transform:translateY(100%);	
+ transform:translateY(100%);
+ /* Apply animation to this element */	
+ -moz-animation: scroll-up 15s  infinite linear;
+ -webkit-animation: scroll-up 15s  infinite linear;
+ animation: scroll-up 15s  infinite linear;
+}
+/* Move it (define the animation) */
+@-moz-keyframes scroll-up {
+ 0%   { -moz-transform: translateY(100%); }
+ 100% { -moz-transform: translateY(-100%); }
+}
+@-webkit-keyframes scroll-up {
+ 0%   { -webkit-transform: translateY(100%); }
+ 100% { -webkit-transform: translateY(-100%); }
+}
+@keyframes scroll-up {
+ 0%   { 
+ -moz-transform: translateY(100%); /* Browser bug fix */
+ -webkit-transform: translateY(100%); /* Browser bug fix */
+ transform: translateY(100%); 		
+ }
+ 100% { 
+ -moz-transform: translateY(-100%); /* Browser bug fix */
+ -webkit-transform: translateY(-100%); /* Browser bug fix */
+ transform: translateY(-100%); 
+ }
+}
+
+</style>
+  </head>
+  <body> 
+
+    <!--START SCROLL TOP BUTTON -->
+      <a class="scrollToTop" href="#">
+        <i class="fa fa-angle-up"></i>      
+      </a>
+    <!-- END SCROLL TOP BUTTON -->
+  
+    <!-- Start header  -->
+    <header id="mu-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12">
+            <div class="mu-header-area">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                  <div class="mu-header-top-left">
+                    <div class="mu-top-email">
+                      <i class="fa fa-envelope"></i>
+                      <span>spokenenglishpoint1@gmail.com</span>
+                    </div>
+                    <div class="mu-top-phone">
+                      <i class="fa fa-phone"></i>
+                      <span>+91 8847858470</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                  <div class="mu-header-top-right">
+                    <nav>
+                      <ul class="mu-top-social-nav">
+                        <li><a href="https://www.facebook.com/Spoken-English-point-103431698117783"><span class="fa fa-facebook"></span></a></li>
+                        <li><a href="https://twitter.com/SpokenPoint"><span class="fa fa-twitter"></span></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCvVttr-ximLJ-tTRsmpKBqg"><span class="fa fa-youtube"></span></a></li>
+                        <li><a href="{% url 'news' %}"><span class="fa fa-user"></span></a></li>
+                        {% if request.user.is_authenticated %}
+                        <li><a href="{% url 'logout' %}"><span class="fa fa-unlock"></span></a></li>
+                        {% endif %}
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- End header  -->
+    
+    <!-- Start menu -->
+    <section id="mu-menu">
+      <nav class="navbar navbar-default" role="navigation">  
+        <div class="container">
+          <div class="navbar-header">
+            <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- LOGO -->              
+            <!-- TEXT BASED LOGO -->
+            <a class="navbar-brand" href="{% url 'home' %}"><i style="color:black" class="fa fa-university"></i><span style="color:red">Spoken</span><span style="color:blue">English</span><span>Point</span></a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
+            
+              <li><a href="{% url 'home' %}">Home</a></li>   
+              <li><a href="{% url 'gallery' %}">Gallery</a></li>
+              <li><a href="{% url 'blog' %}">Blog</a></li>    
+              
+              <li><a href="{% url 'contact' %}">Contact</a></li>
+          
+            </ul>                     
+          </div><!--/.nav-collapse -->        
+        </div>     
+      </nav>
+    </section>
+    <!-- End menu -->
+  {% block content %}
+  {% endblock %}
+<!-- Start footer -->
+<footer id="mu-footer">
+  <!-- start footer top -->
+  <div class="mu-footer-top">
+    <div class="container">
+      <div class="mu-footer-top-area">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="mu-footer-widget">
+              <h4>Contact</h4>
+              <address>
+                <p>Sankar Cinema Road,Bazarpada,Near Andhrabank,Angul,759122</p>
+                <p>Phone: (+91) 8847858470 </p>
+                <p>Website: www.spokenenglishpoint.in</p>
+                <p>Email: spokenenglishpoint1@gmail.com</p>
+              </address>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="mu-footer-widget">
+                <h4>Connect With Us</h4>
+                <a href="https://www.facebook.com/Spoken-English-point-103431698117783"><img src="{% static 'assets/img/f.png' %}" height="40px" width="40px"></a>
+                <a href="https://twitter.com/SpokenPoint"><img src="{% static 'assets/img/t.png' %}" height="40px" width="40px"></a>
+                <a href="https://www.youtube.com/channel/UCvVttr-ximLJ-tTRsmpKBqg"><img src="{% static 'assets/img/y.jpg' %}" height="40px" width="40px"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end footer top -->
+  <!-- start footer bottom -->
+  <div class="mu-footer-bottom">
+    <div class="container">
+      <div class="mu-footer-bottom-area">
+        <p>&copy; All Right Reserved. Designed by <a href="#" rel="nofollow">SpokenEnglishPoint</a></p>
+      </div>
+    </div>
+  </div>
+  <!-- end footer bottom -->
+</footer>
+<!-- End footer -->
+
+<!-- jQuery library -->
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>  
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="{% static 'assets/js/bootstrap.js' %}"></script>   
+<!-- Slick slider -->
+<script type="text/javascript" src="{% static 'assets/js/slick.js' %}"></script>
+<!-- Counter -->
+<script type="text/javascript" src="{% static 'assets/js/waypoints.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/js/jquery.counterup.js' %}"></script>  
+<!-- Mixit slider -->
+<script type="text/javascript" src="{% static 'assets/js/jquery.mixitup.js' %}"></script>
+<!-- Add fancyBox -->        
+<script type="text/javascript" src="{% static 'assets/js/jquery.fancybox.pack.js' %}"></script>
+
+
+<!-- Custom js -->
+<script src="{% static 'assets/js/custom.js' %}"></script> 
+
+</body>
+</html>

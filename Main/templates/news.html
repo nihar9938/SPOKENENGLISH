@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+  
+{% block content %}
+ <!-- Page breadcrumb -->
+ {% load static %}
+ <section id="mu-page-breadcrumb">
+   <div class="container">
+     <div class="row">
+       <div class="col-md-12">
+         <div class="mu-page-breadcrumb-area">
+           <h2>Admin Section</h2>
+           <ol class="breadcrumb">
+            <li><a href="{% url 'home' %}">Home</a></li>            
+            <li class="active">News</li>
+          </ol>
+         </div>
+       </div>
+     </div>
+   </div>
+ </section>
+ <!-- End breadcrumb -->
+ <section id="mu-course-content">
+   <div class="container" align="center">
+    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Add News</button>
+    <form action="{% url 'addnews' %}" method="POST" >
+      {% csrf_token %}
+      <div id="demo" class="collapse">
+        <br>
+          <div class="col-md-10">
+            {{ form.title }}
+          </div>
+        
+          <div class="col-md-2">
+            {{ form.valid }} <span>Valid</span>
+          </div>
+          <br><br>
+          <div class="col-md-2">
+            <button class="btn btn-info">Add</button>
+          </div>
+      </div>
+    </form>
+    <br><br>
+
+       <table style="border: 3px solid blue;padding:20px;" align="center" >
+            <tr>
+            <th style="border: 3px solid black;padding:10px" align="center">News</th>
+            <th style="border: 3px solid black;padding:10px">Delete</th>
+            </tr>
+            {% if news %}
+              {% for n in news %}
+                  <tr>
+                    <td style="border: 3px solid black;padding:10px">{{n}}</td>
+                      <td style="border: 3px solid black;padding:10px"><a href="{% url 'delete' n.id %}" class="btn btn-info">Delete</a></td>
+                  </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                  <td style="border: 3px solid black;padding:10px">Please add News</td>
+                    <td style="border: 3px solid black;padding:10px">Count 0</td>
+                </tr>
+            {% endif %}
+       </table>
+        <hr style="height:2px;">
+       <h1>Registered students for Demo</h1>
+       <hr>
+        <table>
+            <tr>
+            <th style="border: 3px solid black;padding:10px">Name</th>
+            <th style="border: 3px solid black;padding:10px">Phone</th>
+            <th style="border: 3px solid black;padding:10px">Email</th>
+            <th style="border: 3px solid black;padding:10px">Course</th>
+            <th style="border: 3px solid black;padding:10px">Delete</th>
+            </tr>
+            {% if students%}
+
+              {% for r in students %}
+                <tr>
+                    <td style="border: 3px solid black;padding:10px">{{ r.Name}}</td>
+                    <td style="border: 3px solid black;padding:10px">{{ r.Phone}}</td>
+                    <td style="border: 3px solid black;padding:10px">{{ r.Email}}</td>
+                    <td style="border: 3px solid black;padding:10px">{{ r.Course}}</td>
+                    <td style="border: 3px solid black;padding:10px">
+                      <a href="{% url 'deletedemousers' r.id %}" class="btn btn-info">Delete</a>
+                    </td>
+                </tr>
+              {% endfor %}
+            {% else %}
+            <tr>
+             <td>No Demo Users yet.</td>
+          </tr>
+          {% endif %}
+            </table>
+            <hr style="height:2px;"><h1>Total Mails</h1>
+            <hr>
+            <table style="border: 3px solid blue;padding:20px;" align="center" >
+              <tr>
+              <th style="border: 3px solid black;padding:10px" align="center">Mails</th>
+              <th style="border: 3px solid black;padding:10px">Delete</th>
+              </tr>
+              {% if mails %}
+                {% for n in mails %}
+                    <tr>
+
+                      <td style="border: 3px solid black;padding:10px">{{n}}</td>
+                      <td style="border: 3px solid black;padding:10px"><a href="{% url 'deletemail' n.id %}" class="btn btn-info">Delete</a></td>
+                    </tr>
+                {% endfor %}
+              {% else %}
+              <tr>
+                <td style="border: 3px solid black;padding:10px">Your have no mails</td>
+                <td style="border: 3px solid black;padding:10px">Count 0</td>
+              </tr>
+              {% endif %}
+         </table>
+   </div>
+ </section>
+
+ {% endblock %}
