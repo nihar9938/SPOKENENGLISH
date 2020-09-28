@@ -2177,6 +2177,7 @@ img {
 
   #mu-menu .navbar-header .navbar-brand {
     padding-top: 10px;
+    font-size: 24px;
   }
 
   #mu-search-icon {
@@ -2288,6 +2289,10 @@ img {
   }
 }
 @media (max-width: 640px) {
+  #mu-menu .navbar-header .navbar-brand {
+    padding-top: 10px;
+    font-size: 18px;
+  }
   #mu-header .mu-header-area .mu-header-top-left .mu-top-phone {
     display: none;
   }
