@@ -124,7 +124,7 @@ EMAIL_HOST_USER = "spokenenglishpoint1@gmail.com"
 EMAIL_HOST_PASSWORD = "pqrvwyauyadgmqwm"
 EMAIL_PORT = 587
 
-
+DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
