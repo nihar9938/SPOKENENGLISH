@@ -24,3 +24,18 @@ class Mail(models.Model):
 
     def __str__(self):
         return self.name + ' - ' + self.email
+
+class Courses(models.Model):
+    name = models.CharField(max_length=100)
+    image = models.ImageField(null=True)
+
+    def __str__(self):
+        return self.name + ' - ' + self.name
+
+class Review(models.Model):
+    name = models.CharField(max_length=100)
+    review = models.TextField()
+    type = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.name + ' - ' + self.name
