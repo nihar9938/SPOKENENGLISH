@@ -113,8 +113,7 @@
               </div>
               <div class="col-lg-6 col-md-6" style="padding-top:90px">
                 <div class="mu-about-us-right">
-                <a id="mu-abtus-video" href="https://www.youtube.com/watch?v=-nM4nJgY3P0" target="mutube-video">
-                  <img src="{% static 'assets/img/sep.jpg' %}" alt="img">
+                  <img src="{% static 'assets/img/sep1.jpg' %}" alt="img" style="height:250px; width:450px">
                 </a>
                 </div>
               </div>
@@ -138,14 +137,16 @@
             </div>
             <!-- End Title -->
             <!-- Start latest course content -->
+
             <div id="mu-latest-course-slide" class="mu-latest-courses-content">
+              {% for i in courses %}
               <div class="col-lg-4 col-md-4 col-xs-12">
                 <div class="mu-latest-course-single">
                   <figure class="mu-latest-course-img">
-                    <a href="#"><img src="{% static 'assets/img/courses/A.jpg' %}" alt="img"></a>
+                    <a href="#"><img src="{{ i.image.url }}" alt="img"></a>
                     <center>
                         <figcaption class="mu-latest-course-imgcaption">
-                          <h4><b><i>Spoken English Training</i></b></h4>
+                          <h4><b><i>{{i.name}}</i></b></h4>
                           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#register">
                                 Register For Demo
                               </button>
@@ -154,51 +155,8 @@
                   </figure>
                 </div>
               </div>
-              <div class="col-lg-4 col-md-4 col-xs-12">
-                <div class="mu-latest-course-single">
-                  <figure class="mu-latest-course-img">
-                    <a href="#"><img src="{% static 'assets/img/courses/B.jpg' %}" alt="img"></a>
-                    <center>
-                        <figcaption class="mu-latest-course-imgcaption">
-                          <h4><b><i>Communication Skill Training</i></b></h4>
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#register">
-                                Register For Demo
-                              </button>
-                        </figcaption>
-                    </center>
-                  </figure>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-4 col-xs-12">
-                <div class="mu-latest-course-single">
-                  <figure class="mu-latest-course-img">
-                    <a href="#"><img src="{% static 'assets/img/courses/C.jpg' %}" alt="img"></a>
-                    <center>
-                        <figcaption class="mu-latest-course-imgcaption">
-                          <h4><b><i>Body Language Training</i></b></h4>
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#register">
-                                Register For Demo
-                              </button>
-                        </figcaption>
-                    </center>
-                  </figure>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-4 col-xs-12">
-                <div class="mu-latest-course-single">
-                  <figure class="mu-latest-course-img">
-                    <a href="#"><img src="{% static 'assets/img/courses/D.jpg' %}" alt="img"></a>
-                    <center>
-                        <figcaption class="mu-latest-course-imgcaption">
-                          <h4><b><i>Personality Development</i></b></h4>
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#register">
-                                Register For Demo
-                              </button>
-                        </figcaption>
-                    </center>
-                  </figure>
-                </div>
-              </div>
+
+              {% endfor %}
             </div>
             <!-- End latest course content -->
           </div>
@@ -217,55 +175,24 @@
         <div class="col-md-12">
           <div class="mu-testimonial-area">
             <div id="mu-testimonial-slide" class="mu-testimonial-content">
+              {% for i in review %}
               <!-- start testimonial single item -->
               <div class="mu-testimonial-item">
                 <div class="mu-testimonial-quote">
                   <blockquote>
-                    <p>Observed a unique kind of teaching concept here. I really liked it as your class is just a call away.
-                        Thanks Spoken English Point.</p>
+                    <p>{{i.review}}</p>
                   </blockquote>
                 </div>
                 <div class="mu-testimonial-img">
-                  <img src="{% static 'assets/img/t1.jpg' %}" alt="img">
+                  <img src="{% static 'assets/img/t1.png' %}" alt="img">
                 </div>
                 <div class="mu-testimonial-info">
-                  <h4>PRATIKSHYA BEHERA</h4>
-                  <span>Happy Student</span>
+                  <h4>{{i.name}}</h4>
+                  <span>Happy {{i.type}}</span>
                 </div>
               </div>
               <!-- end testimonial single item -->
-              <!-- start testimonial single item -->
-              <div class="mu-testimonial-item">
-                <div class="mu-testimonial-quote">
-                  <blockquote>
-                    <p>I feel really involved, and I feel like we are working as a team. I appreciate the feeling that I, as a parent, matter in what happens with my children.</p>
-                  </blockquote>
-                </div>
-                <div class="mu-testimonial-img">
-                  <img src="{% static 'assets/img/t2.jpg' %}" alt="img">
-                </div>
-                <div class="mu-testimonial-info">
-                  <h4>MIR WAKIF ALI</h4>
-                  <span>Happy Parent</span>
-                </div>
-              </div>
-              <!-- end testimonial single item -->
-              <!-- start testimonial single item -->
-              <div class="mu-testimonial-item">
-                <div class="mu-testimonial-quote">
-                  <blockquote>
-                    <p>My experience is highly positive for this speaking course. This course helps to gain insight into how you want to build your learning differently. All of this can be done while you learn something new..</p>
-                  </blockquote>
-                </div>
-                <div class="mu-testimonial-img">
-                  <img src="{% static 'assets/img/t3.jpg' %}" alt="img">
-                </div>
-                <div class="mu-testimonial-info">
-                  <h4>MD.FURQUAN</h4>
-                  <span>Happy Student</span>
-                </div>
-              </div>
-              <!-- end testimonial single item -->
+              {% endfor %}
             </div>
           </div>
         </div>
