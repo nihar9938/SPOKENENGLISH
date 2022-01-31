@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from Main.models import News,Register, Mail
+from Main.models import News,Register, Mail, Courses, Review
 from .forms import AddNews_Form, EditNews_Form,RegisterForm
 from django.http import HttpResponse
 from django.core.mail import send_mail
@@ -15,7 +15,9 @@ def Homepage(request):
         form=RegisterForm(request.POST)
         if form.is_valid():
             form.save(commit=True)
-    context = {'news': news,'form':form}
+    courses = Courses.objects.all()
+    review = Review.objects.all()
+    context = {'news': news,'form':form, 'courses': courses, 'review': review}
     return render(request, 'index.html', context)
 
 
