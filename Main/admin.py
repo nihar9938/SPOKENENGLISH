@@ -19,3 +19,14 @@ class AdminMail(admin.ModelAdmin):
     list_display = ('name','email')
 
 admin.site.register(Mail,AdminMail)
+
+
+class AdminCourses(admin.ModelAdmin):
+    list_display = ('name', 'image')
+
+admin.site.register(Courses, AdminCourses)
+
+class AdminReview(admin.ModelAdmin):
+    list_display = ('name', 'review', 'type')
+
+admin.site.register(Review, AdminReview)
